@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    javafx.scene.control.Button button,button2,alert,gridLayout,treeLayout,tableView;
+    javafx.scene.control.Button button,button2,alert,gridLayout,treeLayout,tableView,menuLayout;
 
     Stage window;
 
@@ -39,6 +39,10 @@ public class Main extends Application {
         gridLayout.setText("Open Grid Pane");
         gridLayout.setOnAction(e->GridLayout.display("Grid Pane"));
 
+        menuLayout= new javafx.scene.control.Button();
+        menuLayout.setText("Open Menu");
+        menuLayout.setOnAction(e->MenuLayout.display("Meny Page"));
+
         VBox layout1=new VBox();
         layout1.setSpacing(10);
         layout1.getChildren().add(button);
@@ -46,6 +50,7 @@ public class Main extends Application {
         layout1.getChildren().add(gridLayout);
         layout1.getChildren().add(treeLayout);
         layout1.getChildren().add(tableView);
+        layout1.getChildren().add(menuLayout);
         layout1.getChildren().add(label);
         Scene scene1= new Scene(layout1,300,300);
 
