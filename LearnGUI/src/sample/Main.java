@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    javafx.scene.control.Button button,button2,alert,gridLayout,treeLayout;
+    javafx.scene.control.Button button,button2,alert,gridLayout,treeLayout,tableView;
 
     Stage window;
 
@@ -31,6 +31,10 @@ public class Main extends Application {
         treeLayout.setText("Tree View");
         treeLayout.setOnAction(e->TreeLayout.display("Tree Layout"));
 
+        tableView= new javafx.scene.control.Button();
+        tableView.setText("Table View");
+        tableView.setOnAction(e->TableLayout.display("Table Layout"));
+
         gridLayout= new javafx.scene.control.Button();
         gridLayout.setText("Open Grid Pane");
         gridLayout.setOnAction(e->GridLayout.display("Grid Pane"));
@@ -40,6 +44,7 @@ public class Main extends Application {
         layout1.getChildren().add(alert);
         layout1.getChildren().add(gridLayout);
         layout1.getChildren().add(treeLayout);
+        layout1.getChildren().add(tableView);
         layout1.getChildren().add(label);
         Scene scene1= new Scene(layout1,300,300);
 

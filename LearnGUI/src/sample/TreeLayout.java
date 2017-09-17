@@ -28,7 +28,7 @@ public class TreeLayout {
             System.out.println("new value: "+newValue);
         });
 
-        StackPane treeView=new StackPasne();
+        StackPane treeView=new StackPane();
         treeView.getChildren().addAll(tree);
 
         Scene scene=new Scene(treeView,300,300);
