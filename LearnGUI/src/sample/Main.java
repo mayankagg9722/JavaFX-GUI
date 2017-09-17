@@ -40,6 +40,7 @@ public class Main extends Application {
         gridLayout.setOnAction(e->GridLayout.display("Grid Pane"));
 
         VBox layout1=new VBox();
+        layout1.setSpacing(10);
         layout1.getChildren().add(button);
         layout1.getChildren().add(alert);
         layout1.getChildren().add(gridLayout);
