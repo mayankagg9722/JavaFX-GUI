@@ -1,16 +1,25 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    javafx.scene.control.Button button,button2,alert,gridLayout,treeLayout,tableView,menuLayout;
+    Button button,button2,alert,gridLayout,treeLayout,tableView,menuLayout;
 
     Stage window;
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -18,7 +27,7 @@ public class Main extends Application {
         window=primaryStage;
         window.setTitle("My APP");
 
-        javafx.scene.control.Label label= new javafx.scene.control.Label("Hey Scene 1");
+        Label label= new javafx.scene.control.Label("Hey Scene 1");
 
         button= new javafx.scene.control.Button();
         button.setText("Go to scene 2");
@@ -71,7 +80,10 @@ public class Main extends Application {
             window.close();
         });
 
-        window.setScene(scene1);
+        Parent root= FXMLLoader.load(getClass().getResource("sample.fxml"));
+        window.setScene(new Scene(root,300,200));
+
+//        window.setScene(scene1);
         window.show();
 
     }
@@ -79,10 +91,6 @@ public class Main extends Application {
     @Override
     public void stop() throws Exception {
         super.stop();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 
 }
